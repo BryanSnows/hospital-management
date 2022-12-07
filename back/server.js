@@ -9,8 +9,8 @@ const Calculation = require('./Calculation');
 const db = mysql.createPool({
     host: '127.0.0.1',
     user: 'root',
-    password: 'Bryan3663',
-    database: 'sys',
+    password: '3663',
+    database: 'hospital',
 });
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json());
@@ -114,7 +114,7 @@ app.post("/api/PatientPersonalInfo/insert", (req, res) => {
 
 
     const sqlInsert =
-        "INSERT INTO patient_data (name, gender, dateofBirth, address,bloodType ) VALUES (?,?,?,?,?)";
+        "INSERT INTO patient_data (name, gender, dateofBirth, address,bloodType) VALUES (?,?,?,?,?)";
     db.query(sqlInsert, [name, gender, dateofBirth, address, bloodType], (err, result) => {
 
         if (err) {
